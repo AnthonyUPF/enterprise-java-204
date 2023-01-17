@@ -2,6 +2,7 @@ import org.Lab2Sem2.Person;
 import org.Lab2Sem2.PersonsList;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +44,8 @@ public class PersonTest {
         Person person1=(new PersonsList(persons)).findByName("Fernando Pozo");
         assertEquals(person.getName(),person1.getName());
     }
+
+
 
 
 

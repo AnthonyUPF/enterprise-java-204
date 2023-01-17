@@ -1,5 +1,11 @@
 package org.Lab2Sem2;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Person {
     private String id;
     private String name;
@@ -56,5 +62,25 @@ public class Person {
 
     public String getOccupation() {
         return occupation;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", occupation='" + occupation + '\'' +
+                '}';
+    }
+
+    public void writeInformation() {
+        try {
+            FileWriter writer = new FileWriter(getName()+".txt");
+            writer.write(toString());
+            writer.close();
+        } catch (IOException exception) {
+            System.out.println(exception);
+        }
     }
 }
